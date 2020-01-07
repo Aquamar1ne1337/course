@@ -1,0 +1,94 @@
+﻿<Window x:Class="CourseDataB.MainWindow"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseDataB"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.AcrylicWindowStyle="None"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        FontSize="15"
+        
+        Title="MainWindow" Height="600" Width="1080" AllowsTransparency="True">
+ 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid fw:PointerTracker.Enabled="True" Background="#01FFFFFF">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="CloseBt" Background="{x:Null}" BorderBrush="{x:Null}" Click="CloseBt_Click">
+                        <materialDesign:PackIcon Kind="Close" Foreground="White"/>
+                    </Button>
+                    <TextBlock x:Name="HelloTB" Text="Выход" FontSize="12" VerticalAlignment="Center" Foreground="White"/>
+                </StackPanel>
+                <!--<ListViewItem Padding="0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Home" Margin="15" Foreground="White"/>
+                        <TextBlock Text="Home" VerticalAlignment="Center" Foreground="White"/>
+                    </StackPanel>
+                </ListViewItem>-->
+                <TextBlock Text="Меню" Margin="15" FontWeight="DemiBold" Foreground="White"/>
+                <ListView x:Name="LilView" FontSize="15" Foreground="White"  PreviewMouseLeftButtonUp="LilView_PreviewMouseLeftButtonUp" >
+                    <ListViewItem Padding="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CartPlus" Margin="15"/>
+                            <TextBlock Text="Магазин" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Cart" Margin="15"/>
+                            <TextBlock Text="Корзина" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="CartArrowUp" Margin="15"/>
+                            <TextBlock Text="Список желаемого" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Library" Margin="15"/>
+                            <TextBlock Text="Библиотека" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+            <Button
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom"
+  ToolTip="MaterialDesignFloatingActionMiniDarkButton" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">
+                <materialDesign:PackIcon
+    Foreground="White"
+    Kind="QuestionMarkCircleOutline"
+    Height="24"
+    Width="24" />
+            </Button>
+            <Button
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"
+  ToolTip="MaterialDesignFloatingActionMiniDarkButton" Background="Transparent" BorderBrush="Transparent">
+                <materialDesign:PackIcon
+    Foreground="White"
+    Kind="FileChartOutline"
+    Height="24"
+    Width="24" />
+            </Button>
+        </Grid>
+        <Grid x:Name="Framegrid" Grid.Column="1" fw:PointerTracker.Enabled="True" Background="#01FFFFFF"></Grid>
+    </Grid>
+    
+</Window>

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище gameshopModelContainer" CdmEntityContainer="gameshopEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="gameshopModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Игра">
+      <EntityTypeMapping TypeName="gameshopModel.Игра">
+        <MappingFragment StoreEntitySet="Игра">
+          <ScalarProperty Name="id_игры" ColumnName="id_игры" />
+          <ScalarProperty Name="id_платформы" ColumnName="id_платформы" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Обложка" ColumnName="Обложка" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Дата_выхода" ColumnName="Дата_выхода" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Корзина">
+      <EntityTypeMapping TypeName="gameshopModel.Корзина">
+        <MappingFragment StoreEntitySet="Корзина">
+          <ScalarProperty Name="id_корзины" ColumnName="id_корзины" />
+          <ScalarProperty Name="id_пользователя" ColumnName="id_пользователя" />
+          <ScalarProperty Name="id_игры" ColumnName="id_игры" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Статус" ColumnName="Статус" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Платформа">
+      <EntityTypeMapping TypeName="gameshopModel.Платформа">
+        <MappingFragment StoreEntitySet="Платформа">
+          <ScalarProperty Name="id_платформы" ColumnName="id_платформы" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Пользователь">
+      <EntityTypeMapping TypeName="gameshopModel.Пользователь">
+        <MappingFragment StoreEntitySet="Пользователь">
+          <ScalarProperty Name="id_пользователя" ColumnName="id_пользователя" />
+          <ScalarProperty Name="id_типа" ColumnName="id_типа" />
+          <ScalarProperty Name="Логин" ColumnName="Логин" />
+          <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Тип">
+      <EntityTypeMapping TypeName="gameshopModel.Тип">
+        <MappingFragment StoreEntitySet="Тип">
+          <ScalarProperty Name="id_типа" ColumnName="id_типа" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ИсторияПокупок">
+      <EntityTypeMapping TypeName="gameshopModel.ИсторияПокупок">
+        <MappingFragment StoreEntitySet="ИсторияПокупок">
+          <ScalarProperty Name="Действие" ColumnName="Действие" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Пользователь" ColumnName="Пользователь" />
+          <ScalarProperty Name="Игра" ColumnName="Игра" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activity">
+      <EntityTypeMapping TypeName="gameshopModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="Действие" ColumnName="Действие" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Пользователь" ColumnName="Пользователь" />
+          <ScalarProperty Name="Игра" ColumnName="Игра" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainView">
+      <EntityTypeMapping TypeName="gameshopModel.MainView">
+        <MappingFragment StoreEntitySet="MainView">
+          <ScalarProperty Name="id_игры" ColumnName="id_игры" />
+          <ScalarProperty Name="id_платформы" ColumnName="id_платформы" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Обложка" ColumnName="Обложка" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Дата_выхода" ColumnName="Дата_выхода" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Novelty">
+      <EntityTypeMapping TypeName="gameshopModel.Novelty">
+        <MappingFragment StoreEntitySet="Novelty">
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="Дата_выхода" ColumnName="Дата_выхода" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preiskurant">
+      <EntityTypeMapping TypeName="gameshopModel.Preiskurant">
+        <MappingFragment StoreEntitySet="Preiskurant">
+          <ScalarProperty Name="Название_игры" ColumnName="Название игры" />
+          <ScalarProperty Name="Платформа" ColumnName="Платформа" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopGames">
+      <EntityTypeMapping TypeName="gameshopModel.TopGames">
+        <MappingFragment StoreEntitySet="TopGames">
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Количество" ColumnName="Количество" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CartAdd" FunctionName="Хранилище gameshopModel.CartAdd" />
+    <FunctionImportMapping FunctionImportName="CartDelete" FunctionName="Хранилище gameshopModel.CartDelete" />
+    <FunctionImportMapping FunctionImportName="CartView" FunctionName="Хранилище gameshopModel.CartView">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gameshopModel.CartView_Result">
+          <ScalarProperty Name="id_игры" ColumnName="id_игры" />
+          <ScalarProperty Name="id_платформы" ColumnName="id_платформы" />
+          <ScalarProperty Name="Дата_выхода" ColumnName="Дата_выхода" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Обложка" ColumnName="Обложка" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LibraryAdd" FunctionName="Хранилище gameshopModel.LibraryAdd" />
+    <FunctionImportMapping FunctionImportName="LibraryView" FunctionName="Хранилище gameshopModel.LibraryView">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gameshopModel.LibraryView_Result">
+          <ScalarProperty Name="id_игры" ColumnName="id_игры" />
+          <ScalarProperty Name="id_платформы" ColumnName="id_платформы" />
+          <ScalarProperty Name="Дата_выхода" ColumnName="Дата_выхода" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Обложка" ColumnName="Обложка" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SignUp" FunctionName="Хранилище gameshopModel.SignUp" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище gameshopModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище gameshopModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище gameshopModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище gameshopModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gameshopModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище gameshopModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gameshopModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище gameshopModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище gameshopModel.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="WishlistAdd" FunctionName="Хранилище gameshopModel.WishlistAdd" />
+    <FunctionImportMapping FunctionImportName="WishlistDelete" FunctionName="Хранилище gameshopModel.WishlistDelete" />
+    <FunctionImportMapping FunctionImportName="WishlistView" FunctionName="Хранилище gameshopModel.WishlistView">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gameshopModel.WishlistView_Result">
+          <ScalarProperty Name="id_игры" ColumnName="id_игры" />
+          <ScalarProperty Name="id_платформы" ColumnName="id_платформы" />
+          <ScalarProperty Name="Дата_выхода" ColumnName="Дата_выхода" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Обложка" ColumnName="Обложка" />
+          <ScalarProperty Name="Описание" ColumnName="Описание" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

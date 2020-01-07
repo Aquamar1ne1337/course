@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gameshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Игра">
+    <Key>
+      <PropertyRef Name="id_игры" />
+    </Key>
+    <Property Name="id_игры" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_платформы" Type="Int32" Nullable="false" />
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Описание" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Обложка" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Цена" Type="Int32" Nullable="false" />
+    <Property Name="Дата_выхода" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Корзина" Relationship="Self.cs_fkgame" FromRole="Игра" ToRole="Корзина" />
+    <NavigationProperty Name="Платформа" Relationship="Self.cs_fkplatform" FromRole="Игра" ToRole="Платформа" />
+  </EntityType>
+  <EntityType Name="Корзина">
+    <Key>
+      <PropertyRef Name="id_корзины" />
+    </Key>
+    <Property Name="id_корзины" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_пользователя" Type="Int32" Nullable="false" />
+    <Property Name="id_игры" Type="Int32" Nullable="false" />
+    <Property Name="Цена" Type="Int32" Nullable="false" />
+    <Property Name="Дата" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Статус" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Игра" Relationship="Self.cs_fkgame" FromRole="Корзина" ToRole="Игра" />
+    <NavigationProperty Name="Пользователь" Relationship="Self.cs_fkuser" FromRole="Корзина" ToRole="Пользователь" />
+  </EntityType>
+  <EntityType Name="Платформа">
+    <Key>
+      <PropertyRef Name="id_платформы" />
+    </Key>
+    <Property Name="id_платформы" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Название" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Игра" Relationship="Self.cs_fkplatform" FromRole="Платформа" ToRole="Игра" />
+  </EntityType>
+  <EntityType Name="Пользователь">
+    <Key>
+      <PropertyRef Name="id_пользователя" />
+    </Key>
+    <Property Name="id_пользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_типа" Type="Int32" Nullable="false" />
+    <Property Name="Логин" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Корзина" Relationship="Self.cs_fkuser" FromRole="Пользователь" ToRole="Корзина" />
+    <NavigationProperty Name="Тип" Relationship="Self.cs_fktype" FromRole="Пользователь" ToRole="Тип" />
+  </EntityType>
+  <EntityType Name="Тип">
+    <Key>
+      <PropertyRef Name="id_типа" />
+    </Key>
+    <Property Name="id_типа" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Название" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Пользователь" Relationship="Self.cs_fktype" FromRole="Тип" ToRole="Пользователь" />
+  </EntityType>
+  <EntityType Name="ИсторияПокупок">
+    <Key>
+      <PropertyRef Name="Действие" />
+      <PropertyRef Name="Дата" />
+      <PropertyRef Name="Пользователь" />
+      <PropertyRef Name="Игра" />
+    </Key>
+    <Property Name="Действие" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Дата" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Пользователь" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Игра" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="Действие" />
+      <PropertyRef Name="Дата" />
+      <PropertyRef Name="Пользователь" />
+      <PropertyRef Name="Игра" />
+    </Key>
+    <Property Name="Действие" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Дата" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Пользователь" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Игра" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MainView">
+    <Key>
+      <PropertyRef Name="id_игры" />
+      <PropertyRef Name="id_платформы" />
+      <PropertyRef Name="Название" />
+      <PropertyRef Name="Описание" />
+      <PropertyRef Name="Обложка" />
+      <PropertyRef Name="Цена" />
+      <PropertyRef Name="Дата_выхода" />
+    </Key>
+    <Property Name="id_игры" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_платформы" Type="Int32" Nullable="false" />
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Описание" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Обложка" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Цена" Type="Int32" Nullable="false" />
+    <Property Name="Дата_выхода" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Novelty">
+    <Key>
+      <PropertyRef Name="Название" />
+      <PropertyRef Name="Цена" />
+      <PropertyRef Name="Дата_выхода" />
+    </Key>
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Цена" Type="Int32" Nullable="false" />
+    <Property Name="Дата_выхода" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Preiskurant">
+    <Key>
+      <PropertyRef Name="Название_игры" />
+      <PropertyRef Name="Платформа" />
+      <PropertyRef Name="Цена" />
+    </Key>
+    <Property Name="Название_игры" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Платформа" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Цена" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopGames">
+    <Key>
+      <PropertyRef Name="Название" />
+    </Key>
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Количество" Type="Int32" />
+  </EntityType>
+  <Association Name="cs_fkgame">
+    <End Role="Игра" Type="Self.Игра" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Корзина" Type="Self.Корзина" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Игра">
+        <PropertyRef Name="id_игры" />
+      </Principal>
+      <Dependent Role="Корзина">
+        <PropertyRef Name="id_игры" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cs_fkplatform">
+    <End Role="Платформа" Type="Self.Платформа" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Игра" Type="Self.Игра" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Платформа">
+        <PropertyRef Name="id_платформы" />
+      </Principal>
+      <Dependent Role="Игра">
+        <PropertyRef Name="id_платформы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cs_fkuser">
+    <End Role="Пользователь" Type="Self.Пользователь" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Корзина" Type="Self.Корзина" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Пользователь">
+        <PropertyRef Name="id_пользователя" />
+      </Principal>
+      <Dependent Role="Корзина">
+        <PropertyRef Name="id_пользователя" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cs_fktype">
+    <End Role="Тип" Type="Self.Тип" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Пользователь" Type="Self.Пользователь" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Тип">
+        <PropertyRef Name="id_типа" />
+      </Principal>
+      <Dependent Role="Пользователь">
+        <PropertyRef Name="id_типа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gameshopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Игра" EntityType="Self.Игра" />
+    <EntitySet Name="Корзина" EntityType="Self.Корзина" />
+    <EntitySet Name="Платформа" EntityType="Self.Платформа" />
+    <EntitySet Name="Пользователь" EntityType="Self.Пользователь" />
+    <EntitySet Name="Тип" EntityType="Self.Тип" />
+    <EntitySet Name="ИсторияПокупок" EntityType="Self.ИсторияПокупок" />
+    <EntitySet Name="Activity" EntityType="Self.Activity" />
+    <EntitySet Name="MainView" EntityType="Self.MainView" />
+    <EntitySet Name="Novelty" EntityType="Self.Novelty" />
+    <EntitySet Name="Preiskurant" EntityType="Self.Preiskurant" />
+    <EntitySet Name="TopGames" EntityType="Self.TopGames" />
+    <AssociationSet Name="cs_fkgame" Association="Self.cs_fkgame">
+      <End Role="Игра" EntitySet="Игра" />
+      <End Role="Корзина" EntitySet="Корзина" />
+    </AssociationSet>
+    <AssociationSet Name="cs_fkplatform" Association="Self.cs_fkplatform">
+      <End Role="Платформа" EntitySet="Платформа" />
+      <End Role="Игра" EntitySet="Игра" />
+    </AssociationSet>
+    <AssociationSet Name="cs_fkuser" Association="Self.cs_fkuser">
+      <End Role="Пользователь" EntitySet="Пользователь" />
+      <End Role="Корзина" EntitySet="Корзина" />
+    </AssociationSet>
+    <AssociationSet Name="cs_fktype" Association="Self.cs_fktype">
+      <End Role="Тип" EntitySet="Тип" />
+      <End Role="Пользователь" EntitySet="Пользователь" />
+    </AssociationSet>
+    <FunctionImport Name="CartAdd">
+      <Parameter Name="gameid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CartDelete">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="gameid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CartView" ReturnType="Collection(gameshopModel.CartView_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LibraryAdd">
+      <Parameter Name="gameid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LibraryView" ReturnType="Collection(gameshopModel.LibraryView_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SignUp">
+      <Parameter Name="login" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(gameshopModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(gameshopModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="WishlistAdd">
+      <Parameter Name="gameid" Mode="In" Type="Int32" />
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="price" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WishlistDelete">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+      <Parameter Name="gameid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WishlistView" ReturnType="Collection(gameshopModel.WishlistView_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="CartView_Result">
+    <Property Type="Int32" Name="id_игры" Nullable="false" />
+    <Property Type="Int32" Name="id_платформы" Nullable="false" />
+    <Property Type="DateTime" Name="Дата_выхода" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Название" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Обложка" Nullable="false" />
+    <Property Type="String" Name="Описание" Nullable="false" />
+    <Property Type="Int32" Name="Цена" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LibraryView_Result">
+    <Property Type="Int32" Name="id_игры" Nullable="false" />
+    <Property Type="Int32" Name="id_платформы" Nullable="false" />
+    <Property Type="DateTime" Name="Дата_выхода" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Название" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Обложка" Nullable="false" />
+    <Property Type="String" Name="Описание" Nullable="false" />
+    <Property Type="Int32" Name="Цена" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WishlistView_Result">
+    <Property Type="Int32" Name="id_игры" Nullable="false" />
+    <Property Type="Int32" Name="id_платформы" Nullable="false" />
+    <Property Type="DateTime" Name="Дата_выхода" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Название" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Обложка" Nullable="false" />
+    <Property Type="String" Name="Описание" Nullable="false" />
+    <Property Type="Int32" Name="Цена" Nullable="false" />
+  </ComplexType>
+</Schema>

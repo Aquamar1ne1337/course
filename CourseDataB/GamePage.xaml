@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="CourseDataB.GamePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CourseDataB"
+             mc:Ignorable="d" 
+             Foreground="Black"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+             fw:AcrylicWindow.Enabled="True"
+             fw:AcrylicWindow.AcrylicWindowStyle="None" d:DesignWidth="800" Width="729.6" Height="600">
+
+    <Grid>
+        <Border BorderBrush="White" BorderThickness="2" HorizontalAlignment="Left" Width="200" Height="280" Margin="60,26,0,284">
+            <Image x:Name="ImageDoge"  Width="200" Height="300" HorizontalAlignment="Left"/>
+        </Border>
+        <TextBlock x:Name="GameNameTB" Width="400" Text="Название: " TextWrapping="Wrap" FontSize="15" Foreground="White" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="297,26,32.6,554"/>
+        <TextBlock x:Name="DateTB" Width="400" Text="Дата выхода: " TextWrapping="Wrap" FontSize="15" Foreground="White" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="297,51,32.6,529" />
+        <TextBlock x:Name="PlatformTB" Width="400" Text="Платформа: " TextWrapping="Wrap" FontSize="15" Foreground="White" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="297,76,32.6,504" />
+        <TextBlock x:Name="PriceTB" Width="400" Text="Цена: " TextWrapping="Wrap" FontSize="15" Foreground="White" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="297,101,32.6,479"/>
+        <Button x:Name="BuyBT" Content="Купить" Width="100" FontSize="15" Margin="60,330,569.6,238" Click="BuyBT_Click"/>
+        <Button x:Name="WishlistBT" Width="200" Content="В список желаемого"  FontSize="15" Margin="180,330,349.6,238" Click="WishlistBT_Click" />
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Width="637" Margin="60,381,0,10" CornerRadius="20">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0.2,9.2,0,0.2">
+                <TextBlock ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="DescriptionTB" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="White" Width="597"/>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+
+</UserControl>
