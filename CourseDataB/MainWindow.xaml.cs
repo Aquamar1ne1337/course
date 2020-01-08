@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using Stimulsoft.Report;
 using Notifications.Wpf;
 
 namespace CourseDataB
@@ -26,7 +27,7 @@ namespace CourseDataB
         {
             InitializeComponent();
             HelloTB.Text = "Здравствуйте, " + CurrentUser.Login;
-            String str = string.Format("{0}.txt", CurrentUser.Login.ToString());
+            String str = string.Format("Files/{0}.txt", CurrentUser.Login.ToString());
             var notification = new NotificationManager();
             if (File.Exists(str))
             {
@@ -112,6 +113,13 @@ namespace CourseDataB
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NewWindow(new Help());
+        }
+
+        private void Reportbt_Click(object sender, RoutedEventArgs e)
+        {
+            StiReport report = new StiReport();
+            report.Load("Report.mrt");
+            report.ShowWithWpf();
         }
     }
 }

@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <MS_x0020_SQL Ref="2" type="Stimulsoft.Report.Dictionary.StiSqlDatabase" isKey="true">
+        <Alias>MS SQL</Alias>
+        <ConnectionStringEncrypted>9Fxlz01KQ835CE29+wCiY9Fi+8JIcZOka0zt/eHkYuvfVN0LVld6aUVGnNzDSbF/wFb7iEVd8s1oXP3M6tite9FatQnJS9OAak09HOR862fXeMECXkEBdXJasJhimGhe</ConnectionStringEncrypted>
+        <Name>MS SQL</Name>
+      </MS_x0020_SQL>
+    </Databases>
+    <DataSources isList="true" count="15">
+      <sysdiagrams Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>sysdiagrams</Alias>
+        <Columns isList="true" count="5">
+          <value>name,System.String</value>
+          <value>principal_id,System.Int32</value>
+          <value>diagram_id,System.Int32</value>
+          <value>version,System.Int32</value>
+          <value>definition,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>ca46890b9b944e809b9313af0a52868d</Key>
+        <Name>sysdiagrams</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from sysdiagrams</SqlCommand>
+      </sysdiagrams>
+      <Игра Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Игра</Alias>
+        <Columns isList="true" count="7">
+          <value>id_игры,System.Int32</value>
+          <value>id_платформы,System.Int32</value>
+          <value>Название,System.String</value>
+          <value>Описание,System.String</value>
+          <value>Обложка,System.String</value>
+          <value>Цена,System.Int32</value>
+          <value>Дата_выхода,System.DateTime</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>75e98a728a044078bad35a9361bc8afa</Key>
+        <Name>Игра</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Игра</SqlCommand>
+      </Игра>
+      <ИсторияПокупок Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>ИсторияПокупок</Alias>
+        <Columns isList="true" count="4">
+          <value>Действие,System.String</value>
+          <value>Дата,System.DateTime</value>
+          <value>Пользователь,System.String</value>
+          <value>Игра,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>c1a69ebab108451a9dbebd4ff4311b76</Key>
+        <Name>ИсторияПокупок</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from ИсторияПокупок</SqlCommand>
+      </ИсторияПокупок>
+      <Корзина Ref="6" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Корзина</Alias>
+        <Columns isList="true" count="6">
+          <value>id_корзины,System.Int32</value>
+          <value>id_пользователя,System.Int32</value>
+          <value>id_игры,System.Int32</value>
+          <value>Цена,System.Int32</value>
+          <value>Дата,System.DateTime</value>
+          <value>Статус,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>00d782c886f544abb0feb46f2a857aae</Key>
+        <Name>Корзина</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Корзина</SqlCommand>
+      </Корзина>
+      <Платформа Ref="7" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Платформа</Alias>
+        <Columns isList="true" count="2">
+          <value>id_платформы,System.Int32</value>
+          <value>Название,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>3cc07730c7314d3b813442cce1af3b00</Key>
+        <Name>Платформа</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Платформа</SqlCommand>
+      </Платформа>
+      <Пользователь Ref="8" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Пользователь</Alias>
+        <Columns isList="true" count="4">
+          <value>id_пользователя,System.Int32</value>
+          <value>id_типа,System.Int32</value>
+          <value>Логин,System.String</value>
+          <value>Пароль,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>90f4903dfece435d87f85e7a84a540a3</Key>
+        <Name>Пользователь</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Пользователь</SqlCommand>
+      </Пользователь>
+      <Тип Ref="9" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Тип</Alias>
+        <Columns isList="true" count="2">
+          <value>id_типа,System.Int32</value>
+          <value>Название,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>018a405c0b8847f4bf804bb4652cef70</Key>
+        <Name>Тип</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Тип</SqlCommand>
+      </Тип>
+      <Activity Ref="10" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Activity</Alias>
+        <Columns isList="true" count="4">
+          <value>Действие,System.String</value>
+          <value>Дата,System.DateTime</value>
+          <value>Пользователь,System.String</value>
+          <value>Игра,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>ba88addb3ed041b2923982ae85f8c63b</Key>
+        <Name>Activity</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Activity</SqlCommand>
+      </Activity>
+      <DateView Ref="11" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>DateView</Alias>
+        <Columns isList="true" count="4">
+          <value>Логин,System.String</value>
+          <value>Дата,System.DateTime</value>
+          <value>Название,System.String</value>
+          <value>Статус,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>b4b51736731c4a158dadfcd6b753df08</Key>
+        <Name>DateView</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from DateView</SqlCommand>
+      </DateView>
+      <MainView Ref="12" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>MainView</Alias>
+        <Columns isList="true" count="7">
+          <value>id_игры,System.Int32</value>
+          <value>id_платформы,System.Int32</value>
+          <value>Название,System.String</value>
+          <value>Описание,System.String</value>
+          <value>Обложка,System.String</value>
+          <value>Цена,System.Int32</value>
+          <value>Дата_выхода,System.DateTime</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>fea6c6f859ae4ad38031f5b242fcbd8d</Key>
+        <Name>MainView</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from MainView</SqlCommand>
+      </MainView>
+      <MonthView Ref="13" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>MonthView</Alias>
+        <Columns isList="true" count="4">
+          <value>Логин,System.String</value>
+          <value>Дата,System.DateTime</value>
+          <value>Название,System.String</value>
+          <value>Статус,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>9f718061e5b84060ac0fc0642c273df6</Key>
+        <Name>MonthView</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from MonthView</SqlCommand>
+      </MonthView>
+      <Novelty Ref="14" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Novelty</Alias>
+        <Columns isList="true" count="3">
+          <value>Название,System.String</value>
+          <value>Цена,System.Int32</value>
+          <value>Дата_выхода,System.DateTime</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>c5bf91b05372435f9030408cc1f233c7</Key>
+        <Name>Novelty</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Novelty</SqlCommand>
+      </Novelty>
+      <Preiskurant Ref="15" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>Preiskurant</Alias>
+        <Columns isList="true" count="3">
+          <value>Название_x0020_игры,System.String</value>
+          <value>Платформа,System.String</value>
+          <value>Цена,System.Int32</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>dcf31f357a504f1f9d3cde415272381c</Key>
+        <Name>Preiskurant</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from Preiskurant</SqlCommand>
+      </Preiskurant>
+      <TodayView Ref="16" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>TodayView</Alias>
+        <Columns isList="true" count="4">
+          <value>Логин,System.String</value>
+          <value>Дата,System.DateTime</value>
+          <value>Название,System.String</value>
+          <value>Статус,System.String</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>1e13a551ee314d5687072b0879702b2b</Key>
+        <Name>TodayView</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from TodayView</SqlCommand>
+      </TodayView>
+      <TopGames Ref="17" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>TopGames</Alias>
+        <Columns isList="true" count="2">
+          <value>Название,System.String</value>
+          <value>Количество,System.Int32</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>087ed165f691421b998be95628ac0b04</Key>
+        <Name>TopGames</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from TopGames</SqlCommand>
+      </TopGames>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>07406a3f991744f284db086b24a55838</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="18" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="15">
+        <HeaderBand1 Ref="19" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text1 Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,3.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="18" />
+              <Parent isRef="19" />
+              <Text>Активность</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text1>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand1</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderBand1>
+        <HeaderActivity Ref="21" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2,19,0.8</ClientRectangle>
+          <Components isList="true" count="4">
+            <HeaderActivity_Действие Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderActivity_Действие</Name>
+              <Page isRef="18" />
+              <Parent isRef="21" />
+              <Text>Действие</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderActivity_Действие>
+            <HeaderActivity_Дата Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderActivity_Дата</Name>
+              <Page isRef="18" />
+              <Parent isRef="21" />
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderActivity_Дата>
+            <HeaderActivity_Пользователь Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderActivity_Пользователь</Name>
+              <Page isRef="18" />
+              <Parent isRef="21" />
+              <Text>Пользователь</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderActivity_Пользователь>
+            <HeaderActivity_Игра Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderActivity_Игра</Name>
+              <Page isRef="18" />
+              <Parent isRef="21" />
+              <Text>Игра</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderActivity_Игра>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderActivity</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderActivity>
+        <DataActivity Ref="26" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,3.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="4">
+            <DataActivity_Действие Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataActivity_Действие</Name>
+              <Page isRef="18" />
+              <Parent isRef="26" />
+              <Text>{Activity.Действие}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataActivity_Действие>
+            <DataActivity_Дата Ref="28" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataActivity_Дата</Name>
+              <Page isRef="18" />
+              <Parent isRef="26" />
+              <Text>{Activity.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataActivity_Дата>
+            <DataActivity_Пользователь Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataActivity_Пользователь</Name>
+              <Page isRef="18" />
+              <Parent isRef="26" />
+              <Text>{Activity.Пользователь}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataActivity_Пользователь>
+            <DataActivity_Игра Ref="30" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataActivity_Игра</Name>
+              <Page isRef="18" />
+              <Parent isRef="26" />
+              <Text>{Activity.Игра}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataActivity_Игра>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Activity</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataActivity</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataActivity>
+        <HeaderBand2 Ref="31" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.2,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text2 Ref="32" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,2.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="18" />
+              <Parent isRef="31" />
+              <Text>Топ игр</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text2>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand2</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderBand2>
+        <HeaderTopGames Ref="33" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <HeaderTopGames_Название Ref="34" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderTopGames_Название</Name>
+              <Page isRef="18" />
+              <Parent isRef="33" />
+              <Text>Название</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTopGames_Название>
+            <HeaderTopGames_Количество Ref="35" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderTopGames_Количество</Name>
+              <Page isRef="18" />
+              <Parent isRef="33" />
+              <Text>Количество</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTopGames_Количество>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderTopGames</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderTopGames>
+        <DataTopGames Ref="36" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,8.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="2">
+            <DataTopGames_Название Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataTopGames_Название</Name>
+              <Page isRef="18" />
+              <Parent isRef="36" />
+              <Text>{TopGames.Название}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataTopGames_Название>
+            <DataTopGames_Количество Ref="38" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.6,0,9.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataTopGames_Количество</Name>
+              <Page isRef="18" />
+              <Parent isRef="36" />
+              <Text>{TopGames.Количество}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataTopGames_Количество>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>TopGames</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataTopGames</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataTopGames>
+        <HeaderBand3 Ref="39" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text3 Ref="40" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="18" />
+              <Parent isRef="39" />
+              <Text>Прайс-лист</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand3</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderBand3>
+        <HeaderPreiskurant Ref="41" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderPreiskurant_Название_игры Ref="42" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderPreiskurant_Название_игры</Name>
+              <Page isRef="18" />
+              <Parent isRef="41" />
+              <Text>Название игры</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderPreiskurant_Название_игры>
+            <HeaderPreiskurant_Платформа Ref="43" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderPreiskurant_Платформа</Name>
+              <Page isRef="18" />
+              <Parent isRef="41" />
+              <Text>Платформа</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderPreiskurant_Платформа>
+            <HeaderPreiskurant_Цена Ref="44" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderPreiskurant_Цена</Name>
+              <Page isRef="18" />
+              <Parent isRef="41" />
+              <Text>Цена</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderPreiskurant_Цена>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderPreiskurant</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderPreiskurant>
+        <DataPreiskurant Ref="45" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,13.2,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataPreiskurant_Название_игры Ref="46" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataPreiskurant_Название_игры</Name>
+              <Page isRef="18" />
+              <Parent isRef="45" />
+              <Text>{Preiskurant.Название_игры}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataPreiskurant_Название_игры>
+            <DataPreiskurant_Платформа Ref="47" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataPreiskurant_Платформа</Name>
+              <Page isRef="18" />
+              <Parent isRef="45" />
+              <Text>{Preiskurant.Платформа}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataPreiskurant_Платформа>
+            <DataPreiskurant_Цена Ref="48" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataPreiskurant_Цена</Name>
+              <Page isRef="18" />
+              <Parent isRef="45" />
+              <Text>{Preiskurant.Цена}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataPreiskurant_Цена>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Preiskurant</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataPreiskurant</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataPreiskurant>
+        <HeaderBand4 Ref="49" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text4 Ref="50" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,4.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="18" />
+              <Parent isRef="49" />
+              <Text>Новинки</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand4</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderBand4>
+        <HeaderNovelty Ref="51" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16.4,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <HeaderNovelty_Название Ref="52" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderNovelty_Название</Name>
+              <Page isRef="18" />
+              <Parent isRef="51" />
+              <Text>Название</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderNovelty_Название>
+            <HeaderNovelty_Цена Ref="53" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderNovelty_Цена</Name>
+              <Page isRef="18" />
+              <Parent isRef="51" />
+              <Text>Цена</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderNovelty_Цена>
+            <HeaderNovelty_Дата_выхода Ref="54" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderNovelty_Дата_выхода</Name>
+              <Page isRef="18" />
+              <Parent isRef="51" />
+              <Text>Дата_выхода</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderNovelty_Дата_выхода>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderNovelty</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderNovelty>
+        <DataNovelty Ref="55" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,18,19,0.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <DataNovelty_Название Ref="56" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataNovelty_Название</Name>
+              <Page isRef="18" />
+              <Parent isRef="55" />
+              <Text>{Novelty.Название}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataNovelty_Название>
+            <DataNovelty_Цена Ref="57" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,6.4,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataNovelty_Цена</Name>
+              <Page isRef="18" />
+              <Parent isRef="55" />
+              <Text>{Novelty.Цена}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataNovelty_Цена>
+            <DataNovelty_Дата_выхода Ref="58" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0,6.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataNovelty_Дата_выхода</Name>
+              <Page isRef="18" />
+              <Parent isRef="55" />
+              <Text>{Novelty.Дата_выхода}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataNovelty_Дата_выхода>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>Novelty</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataNovelty</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataNovelty>
+        <HeaderBand5 Ref="59" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,19.6,19,0.8</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text5 Ref="60" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,18</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="18" />
+              <Parent isRef="59" />
+              <Text>Игры, купленные сегодня</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+            </Text5>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderBand5</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderBand5>
+        <HeaderTodayView Ref="61" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,21.2,19,0.8</ClientRectangle>
+          <Components isList="true" count="4">
+            <HeaderTodayView_Логин Ref="62" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderTodayView_Логин</Name>
+              <Page isRef="18" />
+              <Parent isRef="61" />
+              <Text>Логин</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTodayView_Логин>
+            <HeaderTodayView_Дата Ref="63" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderTodayView_Дата</Name>
+              <Page isRef="18" />
+              <Parent isRef="61" />
+              <Text>Дата</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTodayView_Дата>
+            <HeaderTodayView_Название Ref="64" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderTodayView_Название</Name>
+              <Page isRef="18" />
+              <Parent isRef="61" />
+              <Text>Название</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTodayView_Название>
+            <HeaderTodayView_Статус Ref="65" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>HeaderTodayView_Статус</Name>
+              <Page isRef="18" />
+              <Parent isRef="61" />
+              <Text>Статус</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderTodayView_Статус>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>HeaderTodayView</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+        </HeaderTodayView>
+        <DataTodayView Ref="66" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,22.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="4">
+            <DataTodayView_Логин Ref="67" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataTodayView_Логин</Name>
+              <Page isRef="18" />
+              <Parent isRef="66" />
+              <Text>{TodayView.Логин}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataTodayView_Логин>
+            <DataTodayView_Дата Ref="68" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.8,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataTodayView_Дата</Name>
+              <Page isRef="18" />
+              <Parent isRef="66" />
+              <Text>{TodayView.Дата}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataTodayView_Дата>
+            <DataTodayView_Название Ref="69" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.6,0,4.8,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataTodayView_Название</Name>
+              <Page isRef="18" />
+              <Parent isRef="66" />
+              <Text>{TodayView.Название}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataTodayView_Название>
+            <DataTodayView_Статус Ref="70" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>14.4,0,4.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataTodayView_Статус</Name>
+              <Page isRef="18" />
+              <Parent isRef="66" />
+              <Text>{TodayView.Статус}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataTodayView_Статус>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>TodayView</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataTodayView</Name>
+          <Page isRef="18" />
+          <Parent isRef="18" />
+          <Sort isList="true" count="0" />
+        </DataTodayView>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>043a30fb02cd4e5dba85dbc8ee94a24f</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>1/8/2020 12:56:32 PM</ReportChanged>
+  <ReportCreated>1/8/2020 12:51:52 PM</ReportCreated>
+  <ReportFile>C:\Users\Герман\Documents\Report.mrt</ReportFile>
+  <ReportGuid>782825f5fb0a47e9a6a16cd99bb09ed4</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2020.1.1.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

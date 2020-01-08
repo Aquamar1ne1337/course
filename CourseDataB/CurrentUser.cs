@@ -22,7 +22,11 @@ namespace CourseDataB
             {
                 count++;
             }
-            return count;
+            if (count == 0)
+            {
+                return count + 1;
+            }
+            else return count;
         }
     }
 }

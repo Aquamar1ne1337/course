@@ -206,6 +206,13 @@
     <Parameter Name="userid" Type="int" Mode="In" />
   </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GameAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="gamename" Type="varchar" Mode="In" />
+    <Parameter Name="cover" Type="varchar(max)" Mode="In" />
+    <Parameter Name="description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="price" Type="int" Mode="In" />
+    <Parameter Name="date" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="LibraryAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="gameid" Type="int" Mode="In" />
     <Parameter Name="userid" Type="int" Mode="In" />
@@ -248,6 +255,9 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WaitView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userid" Type="int" Mode="In" />
+  </Function>
   <Function Name="WishlistAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="gameid" Type="int" Mode="In" />
     <Parameter Name="userid" Type="int" Mode="In" />

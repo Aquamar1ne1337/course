@@ -97,11 +97,21 @@ namespace CourseDataB
                     {
                         if(user.Пароль == pasenterpb.Password.ToString())
                         {
-                            CurrentUser.Login = logentertb.Text;
-                            CurrentUser.Id = user.id_пользователя;
-                            MainWindow main = new MainWindow();
-                            main.Show();
-                            this.Close();
+                            if (user.id_типа == 1)
+                            {
+                                Admin admin = new Admin();
+                                admin.Show();
+                                this.Close();
+
+                            }
+                            else
+                            {
+                                CurrentUser.Login = logentertb.Text;
+                                CurrentUser.Id = user.id_пользователя;
+                                MainWindow main = new MainWindow();
+                                main.Show();
+                                this.Close();
+                            }
                         }
                         else
                         {

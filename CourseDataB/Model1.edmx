@@ -211,6 +211,13 @@
           <Parameter Name="userid" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="GameAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gamename" Type="varchar" Mode="In" />
+          <Parameter Name="cover" Type="varchar(max)" Mode="In" />
+          <Parameter Name="description" Type="varchar(max)" Mode="In" />
+          <Parameter Name="price" Type="int" Mode="In" />
+          <Parameter Name="date" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="LibraryAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="gameid" Type="int" Mode="In" />
           <Parameter Name="userid" Type="int" Mode="In" />
@@ -253,6 +260,9 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="WaitView" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userid" Type="int" Mode="In" />
+        </Function>
         <Function Name="WishlistAdd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="gameid" Type="int" Mode="In" />
           <Parameter Name="userid" Type="int" Mode="In" />
@@ -571,6 +581,13 @@
           <FunctionImport Name="CartView" ReturnType="Collection(gameshopModel.CartView_Result)">
             <Parameter Name="userid" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="GameAdd">
+            <Parameter Name="gamename" Mode="In" Type="String" />
+            <Parameter Name="cover" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="price" Mode="In" Type="Int32" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+          </FunctionImport>
           <FunctionImport Name="LibraryAdd">
             <Parameter Name="gameid" Mode="In" Type="Int32" />
             <Parameter Name="userid" Mode="In" Type="Int32" />
@@ -613,6 +630,9 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="WaitView" ReturnType="Collection(gameshopModel.WaitView_Result)">
+            <Parameter Name="userid" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="WishlistAdd">
             <Parameter Name="gameid" Mode="In" Type="Int32" />
             <Parameter Name="userid" Mode="In" Type="Int32" />
@@ -654,6 +674,11 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="WaitView_Result">
+          <Property Type="String" Name="Название" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="id_пользователя" Nullable="false" />
+          <Property Type="String" Name="Статус" Nullable="false" MaxLength="30" />
         </ComplexType>
         <ComplexType Name="WishlistView_Result">
           <Property Type="Int32" Name="id_игры" Nullable="false" />
@@ -806,6 +831,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GameAdd" FunctionName="Хранилище gameshopModel.GameAdd" />
           <FunctionImportMapping FunctionImportName="LibraryAdd" FunctionName="Хранилище gameshopModel.LibraryAdd" />
           <FunctionImportMapping FunctionImportName="LibraryView" FunctionName="Хранилище gameshopModel.LibraryView">
             <ResultMapping>
@@ -845,6 +871,15 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище gameshopModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище gameshopModel.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="WaitView" FunctionName="Хранилище gameshopModel.WaitView">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="gameshopModel.WaitView_Result">
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="id_пользователя" ColumnName="id_пользователя" />
+                <ScalarProperty Name="Статус" ColumnName="Статус" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="WishlistAdd" FunctionName="Хранилище gameshopModel.WishlistAdd" />
           <FunctionImportMapping FunctionImportName="WishlistDelete" FunctionName="Хранилище gameshopModel.WishlistDelete" />
           <FunctionImportMapping FunctionImportName="WishlistView" FunctionName="Хранилище gameshopModel.WishlistView">

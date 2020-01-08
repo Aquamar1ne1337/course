@@ -137,6 +137,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GameAdd" FunctionName="Хранилище gameshopModel.GameAdd" />
     <FunctionImportMapping FunctionImportName="LibraryAdd" FunctionName="Хранилище gameshopModel.LibraryAdd" />
     <FunctionImportMapping FunctionImportName="LibraryView" FunctionName="Хранилище gameshopModel.LibraryView">
       <ResultMapping>
@@ -176,6 +177,15 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище gameshopModel.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище gameshopModel.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="WaitView" FunctionName="Хранилище gameshopModel.WaitView">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gameshopModel.WaitView_Result">
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="id_пользователя" ColumnName="id_пользователя" />
+          <ScalarProperty Name="Статус" ColumnName="Статус" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="WishlistAdd" FunctionName="Хранилище gameshopModel.WishlistAdd" />
     <FunctionImportMapping FunctionImportName="WishlistDelete" FunctionName="Хранилище gameshopModel.WishlistDelete" />
     <FunctionImportMapping FunctionImportName="WishlistView" FunctionName="Хранилище gameshopModel.WishlistView">

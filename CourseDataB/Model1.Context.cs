@@ -79,6 +79,31 @@ namespace CourseDataB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CartView_Result>("CartView", useridParameter);
         }
     
+        public virtual int GameAdd(string gamename, string cover, string description, Nullable<int> price, Nullable<System.DateTime> date)
+        {
+            var gamenameParameter = gamename != null ?
+                new ObjectParameter("gamename", gamename) :
+                new ObjectParameter("gamename", typeof(string));
+    
+            var coverParameter = cover != null ?
+                new ObjectParameter("cover", cover) :
+                new ObjectParameter("cover", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("price", price) :
+                new ObjectParameter("price", typeof(int));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GameAdd", gamenameParameter, coverParameter, descriptionParameter, priceParameter, dateParameter);
+        }
+    
         public virtual int LibraryAdd(Nullable<int> gameid, Nullable<int> userid, Nullable<int> price)
         {
             var gameidParameter = gameid.HasValue ?
@@ -219,6 +244,15 @@ namespace CourseDataB
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<WaitView_Result> WaitView(Nullable<int> userid)
+        {
+            var useridParameter = userid.HasValue ?
+                new ObjectParameter("userid", userid) :
+                new ObjectParameter("userid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WaitView_Result>("WaitView", useridParameter);
         }
     
         public virtual int WishlistAdd(Nullable<int> gameid, Nullable<int> userid, Nullable<int> price)

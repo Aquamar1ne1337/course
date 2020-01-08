@@ -41,7 +41,16 @@ namespace CourseDataB
                     Type = NotificationType.Information
                 });
             }
+            Checking();
 
+        }
+        private void Checking()
+        {
+            if (SumCount() == 0)
+            {
+                withbt.IsEnabled = false;
+                withoutbt.IsEnabled = false;
+            }
         }
 
         private int SumCount()
@@ -66,12 +75,7 @@ namespace CourseDataB
 
         private void Buy()
         {
-            var menu = gameshop.Корзина.Where(u => u.id_пользователя == CurrentUser.Id && u.Статус == "В ожидании").ToList();
-            foreach (Корзина i in menu)
-            {
-                gameshop.LibraryAdd(i.id_игры, CurrentUser.Id, i.Цена);
-            }
-
+           
             var notification = new NotificationManager();
             notification.Show(new NotificationContent
             {
@@ -79,23 +83,24 @@ namespace CourseDataB
                 Message = CheckContent() + " успешно куплена/ы. ",
                 Type = NotificationType.Information
             });
+            var menu = gameshop.Корзина.Where(u => u.id_пользователя == CurrentUser.Id && u.Статус == "В ожидании").ToList();
+            foreach (Корзина i in menu)
+            {
+                gameshop.LibraryAdd(i.id_игры, CurrentUser.Id, i.Цена);
+            }
         }
 
         private string CheckContent()
         {
-            var menu = gameshop.Корзина.Join(gameshop.Игра, p => p.id_игры, c => c.id_игры, (p, c) => new
-            {
-                Name = c.Название,
-                Id = p.id_пользователя,
-                Status = p.Статус,
-            }).Where(u => u.Id == CurrentUser.Id && u.Status == "Куплена");
+            var menu = gameshop.WaitView(CurrentUser.Id);
             string content = string.Empty;
             foreach (var i in menu)
             {
-                content += i.Name + ", ";
+                content += i.Название + ", ";
             }
-
-            return content.Remove(content.Length - 2, 2);
+            int lenght = content.Length - 2;
+            content = content.Remove(lenght);
+            return content;
         }
 
         private void Bt1_Click(object sender, RoutedEventArgs e)
@@ -122,9 +127,10 @@ namespace CourseDataB
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CheckContent();
+         
             var wordApp = new Word.Application();
             wordApp.Visible = false;
+            
 
             try
             {
@@ -135,9 +141,13 @@ namespace CourseDataB
 
                 // wordDocument.SaveAs2(@"c:\Users\Герман\check.docx");
                 wordApp.Visible = true;
-                //wordDocument.Close(); 
+                //wordDocument.Close();  
             }
             catch { MessageBox.Show("Файл уже существует!"); }
+            Buy();
+            LilView.ItemsSource = gameshop.CartView(CurrentUser.Id).ToList();
+            SumTB.Text = SumCount().ToString();
+            Checking();
         }
 
         private void ReplaceWordStub(string stubToReplace, string text, Word.Document wordDocement)
@@ -151,6 +161,8 @@ namespace CourseDataB
         {
             Buy();
             LilView.ItemsSource = gameshop.CartView(CurrentUser.Id).ToList();
+            SumTB.Text = SumCount().ToString();
+            Checking();
         }
     }
 }

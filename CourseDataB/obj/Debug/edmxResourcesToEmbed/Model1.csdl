@@ -230,6 +230,13 @@
     <FunctionImport Name="CartView" ReturnType="Collection(gameshopModel.CartView_Result)">
       <Parameter Name="userid" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="GameAdd">
+      <Parameter Name="gamename" Mode="In" Type="String" />
+      <Parameter Name="cover" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
     <FunctionImport Name="LibraryAdd">
       <Parameter Name="gameid" Mode="In" Type="Int32" />
       <Parameter Name="userid" Mode="In" Type="Int32" />
@@ -272,6 +279,9 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="WaitView" ReturnType="Collection(gameshopModel.WaitView_Result)">
+      <Parameter Name="userid" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="WishlistAdd">
       <Parameter Name="gameid" Mode="In" Type="Int32" />
       <Parameter Name="userid" Mode="In" Type="Int32" />
@@ -313,6 +323,11 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WaitView_Result">
+    <Property Type="String" Name="Название" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="id_пользователя" Nullable="false" />
+    <Property Type="String" Name="Статус" Nullable="false" MaxLength="30" />
   </ComplexType>
   <ComplexType Name="WishlistView_Result">
     <Property Type="Int32" Name="id_игры" Nullable="false" />

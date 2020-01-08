@@ -31,8 +31,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Купить с чеком" FontSize="15" Width="150" Margin="540,82,39.6,477" Height="Auto" Click="Button_Click"></Button>
-        <Button Content="Купить без чека" FontSize="15" Width="150" Margin="540,36,39.6,523" Height="Auto" Click="Button_Click_1"></Button>
+        <Button x:Name="withbt" Content="Купить с чеком" FontSize="15" Width="150" Margin="540,82,39.6,477" Height="Auto" Click="Button_Click"></Button>
+        <Button x:Name="withoutbt" Content="Купить без чека" FontSize="15" Width="150" Margin="540,36,39.6,523" Height="Auto" Click="Button_Click_1"></Button>
         <TextBlock x:Name="SumTB" HorizontalAlignment="Left" Margin="590,524,0,0" FontSize="15" Foreground="White" Background="Transparent" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="23" Width="120"/>
         <Label Foreground="White" FontSize="15" Content="Цена: " HorizontalAlignment="Left" Margin="540,519,0,0" VerticalAlignment="Top"/>
     </Grid>

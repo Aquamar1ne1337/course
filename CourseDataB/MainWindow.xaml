@@ -67,7 +67,7 @@
                     </ListViewItem>
                 </ListView>
             </StackPanel>
-            <Button
+            <Button 
   Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
                 HorizontalAlignment="Left" VerticalAlignment="Bottom"
   ToolTip="MaterialDesignFloatingActionMiniDarkButton" Background="Transparent" BorderBrush="Transparent" Click="Button_Click">
@@ -77,10 +77,10 @@
     Height="24"
     Width="24" />
             </Button>
-            <Button
+            <Button x:Name="Reportbt"
   Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom"
-  ToolTip="MaterialDesignFloatingActionMiniDarkButton" Background="Transparent" BorderBrush="Transparent">
+  ToolTip="MaterialDesignFloatingActionMiniDarkButton" Background="Transparent" BorderBrush="Transparent" Click="Reportbt_Click">
                 <materialDesign:PackIcon
     Foreground="White"
     Kind="FileChartOutline"
