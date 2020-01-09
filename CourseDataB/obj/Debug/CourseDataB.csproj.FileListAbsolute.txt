@@ -112,3 +112,5 @@ C:\Users\Герман\source\repos\CourseDataB\CourseDataB\bin\Debug\Stimulsoft.
 C:\Users\Герман\source\repos\CourseDataB\CourseDataB\bin\Debug\Stimulsoft.Report.WpfDesign.xml
 C:\Users\Герман\source\repos\CourseDataB\CourseDataB\obj\Debug\Admin.g.cs
 C:\Users\Герман\source\repos\CourseDataB\CourseDataB\obj\Debug\Admin.baml
+C:\Users\Герман\source\repos\CourseDataB\CourseDataB\obj\Debug\ParametersReport.g.cs
+C:\Users\Герман\source\repos\CourseDataB\CourseDataB\obj\Debug\ParametersReport.baml

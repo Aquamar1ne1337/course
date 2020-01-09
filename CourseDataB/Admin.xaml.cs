@@ -34,14 +34,27 @@ namespace CourseDataB
             try
             {
                 gameshopEntities gameshop = new gameshopEntities();
-                gameshop.GameAdd(gamenametb.Text, covertb.Text, desdb.Text, Convert.ToInt32(pricetb.Text), Convert.ToDateTime(datetb.Text));
-                String str = string.Format("Files");
-                string[] txtList = Directory.GetFiles(str, "*.txt");
-                foreach (string f in txtList)
+                var ife = gameshop.Игра.ToList();
+                foreach (Игра i in ife)
                 {
-                    File.Delete(f);
-                }
-
+                    if (i.Название == gamenametb.Text)
+                    { MessageBox.Show("Такая игра уже есть."); return; }
+                   
+                }     
+               
+                    gameshop.GameAdd(gamenametb.Text, covertb.Text, desdb.Text, Convert.ToInt32(pricetb.Text), Convert.ToDateTime(datetb.Text));
+                    String str = string.Format("Files");
+                    string[] txtList = Directory.GetFiles(str, "*.txt");
+                    foreach (string f in txtList)
+                    {
+                        File.Delete(f);
+                    }
+                gamenametb.Text = "";
+                covertb.Text = "";
+                desdb.Text = "";
+                pricetb.Text = "";
+                datetb.Text = "";
+                
             }
             catch
             {

@@ -221,7 +221,22 @@
         <Parameters isList="true" count="0" />
         <SqlCommand>select * from Preiskurant</SqlCommand>
       </Preiskurant>
-      <TodayView Ref="16" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+      <TopGames Ref="16" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>TopGames</Alias>
+        <Columns isList="true" count="3">
+          <value>Название,System.String</value>
+          <value>Количество,System.Int32</value>
+          <value>countt,System.Int32</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Key>087ed165f691421b998be95628ac0b04</Key>
+        <Name>TopGames</Name>
+        <NameInSource>MS SQL</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select * from TopGames</SqlCommand>
+      </TopGames>
+      <TodayView Ref="17" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
         <Alias>TodayView</Alias>
         <Columns isList="true" count="4">
           <value>Логин,System.String</value>
@@ -237,20 +252,6 @@
         <Parameters isList="true" count="0" />
         <SqlCommand>select * from TodayView</SqlCommand>
       </TodayView>
-      <TopGames Ref="17" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
-        <Alias>TopGames</Alias>
-        <Columns isList="true" count="2">
-          <value>Название,System.String</value>
-          <value>Количество,System.Int32</value>
-        </Columns>
-        <CommandTimeout>30</CommandTimeout>
-        <Dictionary isRef="1" />
-        <Key>087ed165f691421b998be95628ac0b04</Key>
-        <Name>TopGames</Name>
-        <NameInSource>MS SQL</NameInSource>
-        <Parameters isList="true" count="0" />
-        <SqlCommand>select * from TopGames</SqlCommand>
-      </TopGames>
     </DataSources>
     <Relations isList="true" count="0" />
     <Report isRef="0" />
@@ -986,10 +987,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>1/8/2020 12:56:32 PM</ReportChanged>
+  <ReportChanged>1/9/2020 12:47:15 PM</ReportChanged>
   <ReportCreated>1/8/2020 12:51:52 PM</ReportCreated>
-  <ReportFile>C:\Users\Герман\Documents\Report.mrt</ReportFile>
-  <ReportGuid>782825f5fb0a47e9a6a16cd99bb09ed4</ReportGuid>
+  <ReportFile>c:\users\герман\source\repos\coursedatab\coursedatab\bin\debug\report.mrt</ReportFile>
+  <ReportGuid>ff6891df649049f58f77b0515be5dfa6</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2020.1.1.0</ReportVersion>

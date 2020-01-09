@@ -121,5 +121,11 @@ namespace CourseDataB
             report.Load("Report.mrt");
             report.ShowWithWpf();
         }
+
+        private void Pareportbt_Click(object sender, RoutedEventArgs e)
+        {
+            ParametersReport report = new ParametersReport();
+            report.Show();
+        }
     }
 }

@@ -34,10 +34,10 @@ go
 create table Игра
 (
 	id_игры int not null identity(1,1),
-	id_платформы int not null default 2,
+	id_платформы int not null default 1,
 	Название varchar(50) not null,
 	Дата_выхода datetime not null default '10-10-2010',
-	Описание varchar(max not null,
+	Описание varchar(max) not null,
 	Обложка varchar(max) not null,
 	Цена int not null
 	constraint cs_pkgame primary key(id_игры)
@@ -81,6 +81,17 @@ go
 insert Тип
 	values ('Клиент'),
 			('Администратор')
+go
+
+create procedure GameAdd
+@gamename varchar(100),
+@cover varchar(max),
+@description varchar(max),
+@price int,
+@date datetime as
+begin 
+	insert into Игра(Название, Обложка, Описание, Дата_выхода, Цена) values (@gamename, @cover, @description, @date, @price)
+end
 go
 
 create procedure SignUp
@@ -188,6 +199,17 @@ as
 	begin
 	select Игра.id_игры, Игра.id_платформы, Игра.Дата_выхода, Игра.Название, Игра.Обложка, Игра.Описание, Игра.Цена from Игра
 	join Корзина on Игра.id_игры = Корзина.id_игры
+	where id_пользователя = @userid and Статус = 'В ожидании'
+	end
+go
+
+create procedure WaitView
+@userid int
+as
+	begin
+	select Игра.Название, Корзина.id_пользователя, Корзина.Статус
+	from Корзина
+	join Игра on Корзина.id_игры = Игра.id_игры
 	where id_пользователя = @userid and Статус = 'В ожидании'
 	end
 go
@@ -315,13 +337,14 @@ after update
 		join Платформа on Платформа.id_платформы = Игра.id_платформы
 		go
 
-		create view TopGames as
-		select Игра.Название, count(Корзина.id_игры) as 'Количество'
+		alter view TopGames as
+		select Top(5) Игра.Название, count(Корзина.id_игры) as Количество
 		from Корзина
 		join Игра on Корзина.id_игры = Игра.id_игры
 		join Тип on Тип.id_типа = Игра.id_платформы
 		where Корзина.Статус = 'Куплена'
 		group by Игра.Название
+		order by Количество desc
 		go
 
 		create view Activity as
@@ -333,8 +356,37 @@ after update
 		select Название, Цена, Дата_выхода
 		from Игра
 		where Дата_выхода > DATEADD(year, -1, GETDATE())
-		
+		go
 
+		create view MonthView as
+		select Логин, Дата, Название, Статус
+		from Корзина 
+		join Игра on Корзина.id_игры = Игра.id_игры
+		join Пользователь on Корзина.id_пользователя = Пользователь.id_пользователя
+		where Дата > DATEADD(month, -1, getdate())
+		go
+
+		create view DateView as
+		select Логин, Дата, Название, Статус
+		from Корзина 
+		join Игра on Корзина.id_игры = Игра.id_игры
+		join Пользователь on Корзина.id_пользователя = Пользователь.id_пользователя
+		where Дата > DATEADD(DAY, -1, getdate())
+		go
 		
+		create view TodayView as
+		select Логин, Дата, Название, Статус
+		from Корзина 
+		join Игра on Корзина.id_игры = Игра.id_игры
+		join Пользователь on Корзина.id_пользователя = Пользователь.id_пользователя
+		where Дата = GETDATE()
+		go
 		
-		
+			create view ParamReport as
+			select Логин, Игра.Название, Корзина.Цена, Статус, Дата
+			from Корзина 
+			join Пользователь on Корзина.id_пользователя = Пользователь.id_пользователя
+			join Игра on Корзина.id_игры = Игра.id_игры
+			go
+
+	
